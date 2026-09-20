@@ -1,0 +1,188 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.controls {
+    margin-bottom: 20px;
+}
+
+.controls form {
+    display: inline-table;
+    margin: 0 -5px;
+}
+
+.controls input {
+    padding: 5px;
+    font-size: 16px;
+}
+
+.controls button {
+    padding: 5px 10px;
+    font-size: 16px;
+    margin: 0;
+    cursor: pointer;
+}
+
+#treeContainer {
+    width: 100%;
+    height: 80vh;
+    overflow: auto;
+}
+
+#treeSVG {
+    display: block;
+}
+
+.link {
+    fill: none;
+    stroke: black;
+    stroke-width: 2.2px;
+}
+
+.node circle {
+    stroke: black;
+    stroke-width: 2px;
+}
+
+.node text {
+    font-size: 16px;
+    font-weight: bold;
+    fill: white;
+}
+
+.ButtonRed,
+.buttonBlackLeft,
+.buttonBlackRight,
+.input {
+    vertical-align: top;
+}
+
+.ButtonRed,
+.buttonBlackLeft,
+.buttonBlackRight {
+    border: none;
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+    margin: 0;
+    padding: 8px 18px;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+    height: 40px;
+    box-sizing: border-box;
+}
+
+.ButtonRed {
+    background: red;
+}
+
+.buttonBlackLeft,
+.buttonBlackRight {
+    background: black;
+}
+
+.buttonBlackLeft {
+    display: inline-block;
+    line-height: 24px;
+}
+
+.buttonBlackRight {
+    border-radius: 0 20px 20px 0;
+}
+
+.ButtonRed:hover,
+.buttonBlackLeft:hover,
+.buttonBlackRight:hover {
+    background: darkred;
+}
+
+.input {
+    border: 2px solid red;
+    border-right: none;
+    border-radius: 20px 0 0 20px;
+    padding: 8px 18px;
+    font-size: 16px;
+    outline: none;
+    text-align: center;
+    margin: 0;
+    height: 40px;
+    box-sizing: border-box;
+}
+
+.page-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-header img {
+    width: 70px;
+    height: 70px;
+    margin-right: 10px;
+}
+
+.step-panel {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+    border: none;
+    padding: 20px 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    min-width: 340px;
+    max-width: 90%;
+    z-index: 1000;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    transition: all 0.3s ease;
+}
+
+.step-panel__counter {
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.step-panel__description {
+    font-size: 17px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.step-panel__actions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.modern-btn {
+    background: #ff0000;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.modern-btn:hover {
+    background: #cc0000;
+    transform: translateY(-2px);
+}
+
+.modern-btn:active {
+    background: black;
+    transform: scale(0.98);
+}
+
+.modern-btn--close {
+    background: black;
+}

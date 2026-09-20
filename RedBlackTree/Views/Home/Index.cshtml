@@ -1,0 +1,54 @@
+@model TreeViewModel
+@{
+    ViewData["Title"] = "Red-Black Tree Visualizer";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/rbtree.css" asp-append-version="true"/>
+}
+
+<div class="page-header">
+    <img src="~/images/favicon.png" alt="Red-black tree"/>
+    <h3>@ViewData["Title"]</h3>
+</div>
+
+<br/>
+
+<div class="controls">
+    <form asp-action="Update" method="post">
+        <input type="text" name="value" class="input" maxlength="5" required placeholder="Value"/>
+        <button type="submit" class="ButtonRed" name="action" value="insert">Insert</button>
+        <button type="submit" class="ButtonRed" name="action" value="delete">Delete</button>
+        <button type="submit" class="ButtonRed" name="action" value="search">Search</button>
+    </form>
+
+    <form asp-action="ManageTree" method="post">
+        <button type="submit" class="ButtonRed" name="action" value="info">Information</button>
+        <button type="submit" class="ButtonRed" name="action" value="deleteall">Clear all</button>
+    </form>
+
+    <form>
+        <button type="button" class="ButtonRed" id="playStepsButton">Show steps</button>
+    </form>
+
+    <form id="importForm" asp-action="HandleFiles" method="post" enctype="multipart/form-data">
+        <input type="file" id="fileUpload" name="file" accept=".json" style="display: none;"/>
+        <label for="fileUpload" class="buttonBlackLeft">Import</label><input type="hidden" id="funcInput" name="func"/><button type="submit" id="exportButton" name="func" value="export" class="buttonBlackRight">Export</button>
+    </form>
+
+    <br/><br/>
+    <h4>@Model.Message</h4>
+</div>
+
+<div id="treeContainer">
+    <svg id="treeSVG"></svg>
+</div>
+
+<script type="application/json" id="treePayload">@Html.Raw(Model.PayloadJson)</script>
+
+@section Scripts {
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="~/js/rbtree-render.js" asp-append-version="true"></script>
+    <script src="~/js/rbtree-steps.js" asp-append-version="true"></script>
+    <script src="~/js/rbtree-app.js" asp-append-version="true"></script>
+}
